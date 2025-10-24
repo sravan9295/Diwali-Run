@@ -156,3 +156,11 @@ Developers can specify a preferred test subreddit in `package.json`:
 - Authentication handled automatically by Devvit middleware
 - No need to implement custom authentication
 - Access user context through Devvit server SDK
+
+## Gotchas in Devvit Web
+
+### CSP/WebGL
+- Three.js works in the webview, but if you use workers or certain loaders, mind CSP (e.g., worker-src, script-src)
+- If you see CSP errors, serve scripts/assets from your app origin and avoid inline/eval
+- No third-party CDNs in the client: bundle everything with Vite
+- If you must not hit external URLs for models/textures, bundle them as assets or serve from your server endpoints

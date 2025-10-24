@@ -2,11 +2,21 @@
   "mcpServers": {
     "chrome-devtools": {
       "command": "npx",
-      "args": ["-y", "chrome-devtools-mcp@latest"]
+      "args": [
+        "-y",
+        "chrome-devtools-mcp@latest"
+      ],
+      "disabled": false,
+      "autoApprove": [
+        "new_page",
+        "navigate_page"
+      ]
     },
     "frontend-mcp": {
       "command": "uvx",
-      "args": ["awslabs.frontend-mcp-server@latest"],
+      "args": [
+        "awslabs.frontend-mcp-server@latest"
+      ],
       "env": {
         "FASTMCP_LOG_LEVEL": "ERROR"
       },
